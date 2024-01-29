@@ -1,0 +1,12 @@
+const recipeContainer = document.querySelector(".recipe");
+const timeout = function(s) {
+    return new Promise(function(_, reject) {
+        setTimeout(function() {
+            reject(new Error(`Request took too long! Timeout after ${s} second`));
+        }, s * 1000);
+    });
+}; // https://forkify-api.herokuapp.com/v2
+ // f5b6c833-b839-4f07-a521-e6fffdbc68d5
+ ///////////////////////////////////////
+
+//# sourceMappingURL=index.a6d2c788.js.map
