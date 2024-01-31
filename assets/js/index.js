@@ -1,11 +1,10 @@
 import * as model from './model.js';
-import recipeViews from './views/recipeView.js';
+import recipeView from './views/recipeView.js';
+import searchView from './views/searchView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import recipeView from './views/recipeView.js';
 
-const recipeContainer = document.querySelector('.recipe');
 
 // https://forkify-api.herokuapp.com/v2
 // f5b6c833-b839-4f07-a521-e6fffdbc68d5
@@ -29,8 +28,28 @@ async function showRecipe() {
     };
 };
 
-function init() {
-    recipeViews.addHandlerRender(showRecipe)
-}
+async function controlSearchResults() {
+    try {
+        // 1) Get search query
+        const query = searchView.getQuery();
+        if (!query) return;
 
+
+        // 2) Load search results
+        await model.loadSearchResults(query);
+
+        // 3) Render Results
+        console.log(model.state.search.results);
+
+    } catch (error) {
+        console.log(error);
+    };
+};
+
+
+
+function init() {
+    recipeView.addHandlerRender(showRecipe);
+    searchView.addHandlerSearch(controlSearchResults);
+};
 init();
