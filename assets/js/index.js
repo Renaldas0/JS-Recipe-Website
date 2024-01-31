@@ -6,9 +6,9 @@ import ResultsView from './views/resultsView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-if (module.hot) {
-    module.hot.accept();
-}
+// if (module.hot) {
+//     module.hot.accept();
+// }
 
 
 // https://forkify-api.herokuapp.com/v2
@@ -45,7 +45,8 @@ async function controlSearchResults() {
         await model.loadSearchResults(query);
 
         // 3) Render Results
-        ResultsView.render(model.state.search.results);
+        // ResultsView.render(model.state.search.results);
+        ResultsView.render(model.getSearchResultsPage());
 
     } catch (error) {
         console.log(error);
