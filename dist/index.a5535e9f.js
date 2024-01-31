@@ -586,7 +586,10 @@ var _recipeViewJs = require("./views/recipeView.js");
 var _recipeViewJsDefault = parcelHelpers.interopDefault(_recipeViewJs);
 var _searchViewJs = require("./views/searchView.js");
 var _searchViewJsDefault = parcelHelpers.interopDefault(_searchViewJs);
+var _resultsViewJs = require("./views/resultsView.js");
+var _resultsViewJsDefault = parcelHelpers.interopDefault(_resultsViewJs);
 var _runtime = require("regenerator-runtime/runtime");
+if (module.hot) module.hot.accept();
 // https://forkify-api.herokuapp.com/v2
 // f5b6c833-b839-4f07-a521-e6fffdbc68d5
 ///////////////////////////////////////
@@ -605,13 +608,14 @@ async function showRecipe() {
 }
 async function controlSearchResults() {
     try {
+        (0, _resultsViewJsDefault.default).renderSpinner();
         // 1) Get search query
         const query = (0, _searchViewJsDefault.default).getQuery();
         if (!query) return;
         // 2) Load search results
         await _modelJs.loadSearchResults(query);
         // 3) Render Results
-        console.log(_modelJs.state.search.results);
+        (0, _resultsViewJsDefault.default).render(_modelJs.state.search.results);
     } catch (error) {
         console.log(error);
     }
@@ -622,7 +626,7 @@ function init() {
 }
 init();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"dkYPG","./views/recipeView.js":"fC8OM","./views/searchView.js":"2DdtC"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"dkYPG","./views/recipeView.js":"fC8OM","./views/searchView.js":"2DdtC","./views/resultsView.js":"i04yS"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2616,9 +2620,7 @@ class RecipeView extends (0, _viewJsDefault.default) {
             </div>
 
             <div class="recipe__user-generated">
-            <svg>
-                <use href="${0, _iconsSvgDefault.default}#icon-user"></use>
-            </svg>
+            
             </div>
             <button class="btn--round">
             <svg class="">
@@ -2971,6 +2973,7 @@ var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class View {
     _data;
     render(data) {
+        if (!data || Array.isArray(data) && data.length === 0) return this.renderError();
         this._data = data;
         const markup = this._generateMarkup();
         this._clear();
@@ -3044,6 +3047,39 @@ class SearchView {
 }
 exports.default = new SearchView();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["6z0qx","1E7ZB"], "1E7ZB", "parcelRequire6135")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i04yS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./View.js");
+var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
+var _iconsSvg = require("url:../../images/icons.svg");
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+class ResultsView extends (0, _viewJsDefault.default) {
+    _parentElement = document.querySelector(".results");
+    _errorMessage = "No recipes found with your search query, please try another one.";
+    _successMessage = "";
+    _generateMarkup() {
+        console.log(this._data);
+        return this._data.map(this._generateMarkupPreview).join("");
+    }
+    _generateMarkupPreview(result) {
+        return `
+        <li class="preview">
+            <a class="preview__link" href="#${result.id}">
+              <figure class="preview__fig">
+                <img src="${result.image}" alt="${result.title}" />
+              </figure>
+              <div class="preview__data">
+                <h4 class="preview__title">${result.title}</h4>
+                <p class="preview__publisher">${result.publisher}</p>
+              </div>
+            </a>
+          </li>
+        `;
+    }
+}
+exports.default = new ResultsView();
+
+},{"./View.js":"jmQja","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../images/icons.svg":"lTeNr"}]},["6z0qx","1E7ZB"], "1E7ZB", "parcelRequire6135")
 
 //# sourceMappingURL=index.a5535e9f.js.map
