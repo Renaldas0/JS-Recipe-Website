@@ -25,5 +25,6 @@ export async function loadRecipe(id) {
     } catch (error) {
         // Temporary error handling
         console.error(`${error} 💥`);
+        throw error;
     };
 };

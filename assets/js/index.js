@@ -25,9 +25,12 @@ async function showRecipe() {
         //2) Rendering recipe
         recipeView.render(model.state.recipe);
     } catch (error) {
-        alert(error.message);
+        recipeView.renderError()
     };
 };
 
-const loadEvents = ['hashchange', 'load'];
-loadEvents.forEach(event => window.addEventListener(event, showRecipe));
+function init() {
+    recipeViews.addHandlerRender(showRecipe)
+}
+
+init();

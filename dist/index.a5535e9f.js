@@ -599,14 +599,13 @@ async function showRecipe() {
         //2) Rendering recipe
         (0, _recipeViewJsDefault.default).render(_modelJs.state.recipe);
     } catch (error) {
-        alert(error.message);
+        (0, _recipeViewJsDefault.default).renderError();
     }
 }
-const loadEvents = [
-    "hashchange",
-    "load"
-];
-loadEvents.forEach((event)=>window.addEventListener(event, showRecipe));
+function init() {
+    (0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
+}
+init();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"dkYPG","./views/recipeView.js":"fC8OM"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -2484,6 +2483,7 @@ async function loadRecipe(id) {
     } catch (error) {
         // Temporary error handling
         console.error(`${error} \u{1F4A5}`);
+        throw error;
     }
 }
 
@@ -2500,7 +2500,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getJSON", ()=>getJSON);
 var _regeneratorRuntime = require("regenerator-runtime");
-var _config = require("./config");
+var _configJs = require("./config.js");
 const timeout = function(s) {
     return new Promise(function(_, reject) {
         setTimeout(function() {
@@ -2512,7 +2512,7 @@ async function getJSON(url) {
     try {
         const response = await Promise.race([
             fetch(url),
-            timeout((0, _config.TIMEOUT_SECONDS))
+            timeout((0, _configJs.TIMEOUT_SECONDS))
         ]);
         const data = await response.json();
         if (!response.ok) throw new Error(`${data.message} (${response.status})`);
@@ -2522,7 +2522,7 @@ async function getJSON(url) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","regenerator-runtime":"dXNgZ","./config":"c93Tb"}],"fC8OM":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","regenerator-runtime":"dXNgZ","./config.js":"c93Tb"}],"fC8OM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _iconsSvg = require("url:../../images/icons.svg");
@@ -2531,6 +2531,8 @@ var _fractional = require("fractional");
 class RecipeView {
     #parentElement = document.querySelector(".recipe");
     #data;
+    #errorMessage = "We couldn't find this recipe, please try another one.";
+    #successMessage = "";
     render(data) {
         this.#data = data;
         const markup = this.#generateMarkup();
@@ -2548,8 +2550,43 @@ class RecipeView {
         </svg>
       </div>
       `;
-        this.#parentElement.innerHTML = "";
+        this.#clear();
         this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderError(message = this.#errorMessage) {
+        const markup = `
+            <div class="error">
+                <div>
+                <svg>
+                    <use href="${(0, _iconsSvgDefault.default)}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+          `;
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderMessage(message = this.#successMessage) {
+        const markup = `
+            <div class="message">
+                <div>
+                <svg>
+                    <use href="${(0, _iconsSvgDefault.default)}#icon-smile-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+          `;
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    addHandlerRender(handler) {
+        const loadEvents = [
+            "hashchange",
+            "load"
+        ];
+        loadEvents.forEach((event)=>window.addEventListener(event, handler));
     }
     #generateMarkup() {
         console.log(this.#data);
