@@ -642,9 +642,15 @@ function controlServings(newServings) {
     // recipeView.render(model.state.recipe);
     (0, _recipeViewJsDefault.default).update(_modelJs.state.recipe);
 }
+function controlAddBookmark() {
+    if (!_modelJs.state.recipe.bookmarked) _modelJs.addBookmark(_modelJs.state.recipe);
+    else _modelJs.deleteBookmark(_modelJs.state.recipe.id);
+    (0, _recipeViewJsDefault.default).update(_modelJs.state.recipe);
+}
 function init() {
     (0, _recipeViewJsDefault.default).addHandlerRender(showRecipe);
     (0, _recipeViewJsDefault.default).addHandlerUpdateServings(controlServings);
+    (0, _recipeViewJsDefault.default).addHandlerAddBookmark(controlAddBookmark);
     (0, _searchViewJsDefault.default).addHandlerSearch(controlSearchResults);
     (0, _paginationViewJsDefault.default).addHandlerClick(controlPagination);
 }
@@ -2505,6 +2511,8 @@ parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe);
 parcelHelpers.export(exports, "loadSearchResults", ()=>loadSearchResults);
 parcelHelpers.export(exports, "getSearchResultsPage", ()=>getSearchResultsPage);
 parcelHelpers.export(exports, "updateServings", ()=>updateServings);
+parcelHelpers.export(exports, "addBookmark", ()=>addBookmark);
+parcelHelpers.export(exports, "deleteBookmark", ()=>deleteBookmark);
 var _regeneratorRuntime = require("regenerator-runtime");
 var _configJs = require("./config.js");
 var _helpersJs = require("./helpers.js");
@@ -2515,7 +2523,8 @@ const state = {
         results: [],
         page: 1,
         resultsPerPage: (0, _configJs.RES_PER_PAGE)
-    }
+    },
+    bookmarks: []
 };
 async function loadRecipe(id) {
     try {
@@ -2531,6 +2540,8 @@ async function loadRecipe(id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
+        if (state.bookmarks.some((bookmark)=>bookmark.id === id)) state.recipe.bookmarked = true;
+        else state.recipe.bookmarked = false;
     } catch (error) {
         // Temporary error handling
         console.error(`${error} \u{1F4A5}`);
@@ -2541,7 +2552,6 @@ async function loadSearchResults(query) {
     try {
         state.search.query = query;
         const data = await (0, _helpersJs.getJSON)(`${(0, _configJs.API_URL)}?search=${query}`);
-        console.log(data);
         state.search.results = data.data.recipes.map((recipe)=>{
             return {
                 id: recipe.id,
@@ -2550,6 +2560,7 @@ async function loadSearchResults(query) {
                 image: recipe.image_url
             };
         });
+        state.search.page = 1;
     } catch (error) {
         throw error;
     }
@@ -2566,6 +2577,15 @@ function updateServings(newServings) {
     // newQt = oldQt * newServings / oldServings
     });
     state.recipe.servings = newServings;
+}
+function addBookmark(recipe) {
+    state.bookmarks.push(recipe);
+    if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+}
+function deleteBookmark(id) {
+    const index = state.bookmarks.findIndex((el)=>el.id === id);
+    state.bookmarks.splice(index, 1);
+    if (id === state.recipe.id) state.recipe.bookmarked = false;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","regenerator-runtime":"dXNgZ","./config.js":"c93Tb","./helpers.js":"fn2xV"}],"c93Tb":[function(require,module,exports) {
@@ -2632,6 +2652,13 @@ class RecipeView extends (0, _viewJsDefault.default) {
             if (+updateTo > 0) handler(+updateTo);
         });
     }
+    addHandlerAddBookmark(handler) {
+        this._parentElement.addEventListener("click", function(e) {
+            const btn = e.target.closest(".btn--bookmark");
+            if (!btn) return;
+            handler();
+        });
+    }
     _generateMarkup() {
         return `
             <figure class="recipe__fig">
@@ -2673,9 +2700,9 @@ class RecipeView extends (0, _viewJsDefault.default) {
             <div class="recipe__user-generated">
             
             </div>
-            <button class="btn--round">
+            <button class="btn--round btn--bookmark">
             <svg class="">
-                <use href="${0, _iconsSvgDefault.default}#icon-bookmark-fill"></use>
+                <use href="${0, _iconsSvgDefault.default}#icon-bookmark${this._data.bookmarked ? "-fill" : ""}"></use>
             </svg>
             </button>
         </div>
@@ -3165,7 +3192,6 @@ class PaginationView extends (0, _viewJsDefault.default) {
     _generateMarkup() {
         const currentPage = this._data.page;
         const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-        console.log(numPages);
         // Page 1, and there are other pages
         if (currentPage === 1 && numPages > 1) return `
             <button data-goto="${currentPage + 1}" class="btn--inline pagination__btn--next">

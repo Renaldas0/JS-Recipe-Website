@@ -79,9 +79,20 @@ function controlServings(newServings) {
     recipeView.update(model.state.recipe);
 }
 
+function controlAddBookmark() {
+    if (!model.state.recipe.bookmarked) {
+        model.addBookmark(model.state.recipe);
+    } else {
+        model.deleteBookmark(model.state.recipe.id);
+    }
+
+    recipeView.update(model.state.recipe);
+}
+
 function init() {
     recipeView.addHandlerRender(showRecipe);
     recipeView.addHandlerUpdateServings(controlServings);
+    recipeView.addHandlerAddBookmark(controlAddBookmark);
     searchView.addHandlerSearch(controlSearchResults);
     paginationView.addHandlerClick(controlPagination);
 };
