@@ -6,6 +6,7 @@ import paginationView from './views/paginationView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import resultsView from './views/resultsView.js';
 
 // if (module.hot) {
 //     module.hot.accept();
@@ -23,6 +24,9 @@ async function showRecipe() {
 
         if (!id) return;
         recipeView.renderSpinner();
+
+        // 0) Update Results view to active
+        resultsView.update(model.getSearchResultsPage());
 
         //1) Loading recipe
         await model.loadRecipe(id);
@@ -71,7 +75,8 @@ function controlServings(newServings) {
     model.updateServings(newServings);
 
     // Update the recipe View
-    recipeView.render(model.state.recipe);
+    // recipeView.render(model.state.recipe);
+    recipeView.update(model.state.recipe);
 }
 
 function init() {

@@ -11,7 +11,7 @@ class RecipeView extends View {
     addHandlerRender(handler) {
         const loadEvents = ['hashchange', 'load'];
         loadEvents.forEach(event => window.addEventListener(event, handler));
-    }
+    };
 
     addHandlerUpdateServings(handler) {
         this._parentElement.addEventListener('click', function (e) {
@@ -19,8 +19,8 @@ class RecipeView extends View {
             if (!btn) return;
             const { updateTo } = btn.dataset;
             if (+updateTo > 0) handler(+updateTo);
-        })
-    }
+        });
+    };
 
     _generateMarkup() {
         return `
@@ -97,7 +97,7 @@ class RecipeView extends View {
             </a>
         </div>
       `;
-    }
+    };
 
     _generateMarkupIngredient(ingredient) {
         return `
@@ -111,8 +111,8 @@ class RecipeView extends View {
                     ${ingredient.description}
                     </div>
                 </li>
-                    `
-    }
-}
+                    `;
+    };
+};
 
 export default new RecipeView();
