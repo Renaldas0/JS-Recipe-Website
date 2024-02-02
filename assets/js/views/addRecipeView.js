@@ -1,5 +1,4 @@
 import View from './View.js';
-import icons from 'url:../../images/icons.svg';
 
 class AddRecipeView extends View {
     _parentElement = document.querySelector('.upload');

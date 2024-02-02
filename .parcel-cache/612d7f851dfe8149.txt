@@ -120,7 +120,7 @@
 155C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\lmdb\dependencies\lmdb-data-v1\libraries\liblmdb\mdb_load.1133509970055949749 0
 157C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\css-select\node_modules\dom-serializer\lib\esm\index.d.ts.map133509970053002215 0
 108C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\htmlnano\lib133509970062695534 1
-112C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\views\recipeView.js133513717395900426 0
+112C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\views\recipeView.js133513718010110523 0
 132C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\stable\symbol\unscopables.js133510816995606234 0
 121C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@parcel\watcher-win32-x64133509970052887113 1
 102C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@lezer133509971716034759 1
