@@ -2,10 +2,10 @@
   "name": "recipes4all",
   "version": "1.0.0",
   "description": "Recipe website",
-  "default": "index.js",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "build": "parcel build index.html"
   },
   "author": "Renaldas",
   "license": "ISC",
