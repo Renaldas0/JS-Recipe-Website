@@ -4,7 +4,7 @@ import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import ResultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
-import bookmarksView from './views/resultsView.js';
+import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable';

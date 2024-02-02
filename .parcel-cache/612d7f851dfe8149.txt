@@ -1,4 +1,4 @@
-9845
+9849
 142C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\caniuse-lite\data\features\link-rel-preload.js133509970072398867 0
 168C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@parcel\optimizer-svgo\node_modules\mdn-data\api\inheritance.schema.json133509970054203242 0
 142C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\stable\string\virtual\code-point-at.js133510816995411068 0
@@ -20,7 +20,7 @@
 136C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\features\array\virtual\concat.js133510816977536052 0
 152C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@parcel\package-manager\test\fixtures\has-foo\subpackage133509970062635480 1
 136C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\modules\esnext.symbol.matcher.js133510816993019027 0
-87C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist133513731228433828 1
+87C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist133513732974019981 1
 135C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@parcel\transformer-babel\src\config.js133509970059497787 0
 124C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\stable\array\some.js133510816993934792 0
 102C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\semver133509970059737994 1
@@ -78,7 +78,7 @@
 139C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\modules\es.typed-array.to-string.js133510816991914620 0
 139C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\stable\array\virtual\copy-within.js133510816993984837 0
 125C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\csso\lib\restructure\index.js133509970062340227 0
-95C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\package.json133513730812082408 0
+95C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\package.json133513732011128066 0
 139C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\@swc\helpers\cjs\_sliced_to_array_loose.cjs133509970061934884 0
 125C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\css-tree\cjs\utils\string.cjs133509970064467054 0
 163C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\msgpackr-extract\node_modules\.bin\node-gyp-build-optional-packages133509970081016268 0
@@ -1248,6 +1248,7 @@
 133C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\modules\esnext.set.add-all.js133510816992813833 0
 115C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\stable\package.json133509970048588423 0
 127C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\stable\string\repeat.js133510816995305974 0
+105C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.7d069bee.js133513732973949916 0
 128C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\full\reflect\metadata.js133510816986531263 0
 142C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\internals\create-iter-result-object.js133510816988731923 0
 139C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\caniuse-lite\data\features\online-status.js133509970073589892 0
@@ -3204,6 +3205,7 @@
 123C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\actual\math\imul.js133510816974163165 0
 133C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\es\instance\to-well-formed.js133510816975964712 0
 139C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\htmlnano\lib\modules\collapseWhitespace.mjs133509970062405289 0
+113C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.runtime.0fc7e2b8.js133513732973949916 0
 127C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\full\clear-immediate.js133510816984402759 0
 124C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\actual\math\atanh.js133510816974128133 0
 127C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\caniuse-lite\data\regions\BO.js133509970062044974 0
@@ -3734,6 +3736,7 @@
 125C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\cli-progress\lib\formatter.js133509970054128185 0
 142C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\csso\node_modules\css-tree\lib\walker\index.js133509970067014246 0
 149C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\csso\node_modules\css-tree\lib\generator\sourceMap.js133509970067734872 0
+117C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.runtime.0fc7e2b8.js.map133513732974009976 0
 142C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\csso\node_modules\css-tree\cjs\lexer\index.cjs133509970060964045 0
 141C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\csso\node_modules\css-tree\lib\utils\clone.js133509970065643066 0
 130C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\core-js\internals\string-repeat.js133510816989872888 0
@@ -9826,9 +9829,10 @@
 110C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\node_modules\.bin\which.ps1133509971608112112 0
 105C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.6ed0b0da.js133513731228358756 0
 109C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.6ed0b0da.js.map133513731228428819 0
+109C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.7d069bee.js.map133513732974009976 0
 106C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.c85db87e.css133513731228363777 0
 110C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.c85db87e.css.map133513731228423825 0
-98C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.html133513731228363777 0
+98C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.html133513732973949916 0
 113C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.runtime.bbb3e30e.js133513731228358756 0
 117C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\dist\index.runtime.bbb3e30e.js.map133513731228418815 0
 94C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\scss133509963289004405 1
@@ -9837,7 +9841,7 @@
 107C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\scss\_upload.scss133509963178807345 0
 102C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\config.js133513555290908128 0
 103C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\helpers.js133513722431954744 0
-101C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\index.js133513728234641346 0
+101C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\index.js133513732896778290 0
 115C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\views\addRecipeView.js133513728020634321 0
 115C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\views\bookmarksView.js133513722217186800 0
 113C:\Users\brena\OneDrive\Desktop\programming\HTML,CSS,JS Projects\JS-Recipe-Website\assets\js\views\previewView.js133513594064762496 0
