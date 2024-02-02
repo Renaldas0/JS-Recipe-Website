@@ -10,7 +10,6 @@ import addRecipeView from './views/addRecipeView.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import resultsView from './views/resultsView.js';
-import bookmarksView from './views/bookmarksView.js';
 
 // if (module.hot) {
 //     module.hot.accept();
