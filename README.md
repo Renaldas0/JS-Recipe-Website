@@ -8,3 +8,8 @@
 - Users can also add their own recipes that ONLY they will see their own in the bookmarks
 - Forkify uses a recipe API created by Jonas Schmedtmann
 - Users also have the ability to bookamrk their favourite recipes and these get stored in local storage
+
+  ### Additional features
+  - Hosted on Netlify
+  - Uses Parcel
+  - Technologies : HTML, SCSS, JavaScript
